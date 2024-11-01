@@ -15,6 +15,13 @@ class ConfigReader:
         else:
             return []
 
+    def get_op_name_list(self):
+        # 读取配置文件中名字列表
+        if 'names' in self.config and 'op_name_list' in self.config['names']:
+            return self.config['names']['op_name_list'].split(',')
+        else:
+            return []
+
     def get_ttf(self):
         # 读取配置文件中名字列表
         if 'ttf' in self.config and 'ttc' in self.config['ttf']:

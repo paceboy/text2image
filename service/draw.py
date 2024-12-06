@@ -17,14 +17,14 @@ class Draw:
         image = Image.open(img)  # 打开图片
         dr = ImageDraw.Draw(image)
 
-        font = ImageFont.truetype(font_pos, 60)  # 设置加载字体位置，以及字体大小
+        font = ImageFont.truetype(font_pos, 100)  # 设置加载字体位置，以及字体大小
         text_bbox = dr.textbbox((0, 0), text, font=font)
         text_width = text_bbox[2] - text_bbox[0]
         text_height = text_bbox[3] - text_bbox[1]
 
         # 计算居中的x坐标
-        x = (image.size[0] - text_width) // 2 + 100
-        y = (image.size[1] - text_height) // 2 + 100
+        x = (image.size[0] - text_width) // 2
+        y = (image.size[1] - text_height) // 2 + 200
 
         # 在图像上绘制文本
         dr.text((x, y), text, font=font, fill="#ffffff")
